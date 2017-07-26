@@ -9,11 +9,11 @@
                     http://www.springframework.org/schema/tx
                     http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<!-- 自动扫描 -->
-	<context:component-scan base-package="site.share2u.etl" />
+	<context:component-scan base-package="site.share2u.etl"/>
 	<!-- 第一种方式：加载一个properties文件 -->
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location" value="classpath:jdbc.properties" />
+		<property name="location" value="classpath:jdbc.properties"/>
 	</bean>
 	<!-- 第二种方式：加载多个properties文件 
 	<bean id="configProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean"> 
@@ -57,11 +57,11 @@
 		<property name="basePackage" value="site.share2u.etl.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
-	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<!-- 事务管理器实现类 ，可以有多个事务管理器，多个数据源-->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	<!-- (事务管理)transaction manager, use JtaTransactionManager for global tx -->
+	<!-- 事务增强驱动  对@Transaction的具体业务类，方法上进行事务增强-->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 </beans>
