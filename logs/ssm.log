@@ -196,4 +196,173 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
   [INFO] [2017-07-26 17:05:10][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
   [INFO] [2017-07-26 17:05:10][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 215 ms
   [WARN] [2017-07-26 17:13:59][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'SpringMVC'
+  [INFO] [2017-08-01 23:28:35][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:28:35][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:28:35 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:28:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:28:36][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:28:36][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:28:36][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 900 ms
+  [INFO] [2017-08-01 23:28:36][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:28:36][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:28:36 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:28:36][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:28:36][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:28:37][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:28:37][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:28:37][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:28:37][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:28:37][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:28:37][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:28:37][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 480 ms
+  [WARN] [2017-08-01 23:29:18][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/] in DispatcherServlet with name 'SpringMVC'
+  [WARN] [2017-08-01 23:29:19][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/favicon.ico] in DispatcherServlet with name 'SpringMVC'
+  [INFO] [2017-08-01 23:30:40][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:30:40][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:30:40 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:30:40][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:30:41][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:30:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:30:41][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 923 ms
+  [INFO] [2017-08-01 23:30:41][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:30:41][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:30:41 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:30:41][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:30:41][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:30:42][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:30:42][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:30:42][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:30:42][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:30:42][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:30:42][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:30:42][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 589 ms
+  [WARN] [2017-08-01 23:31:20][org.springframework.web.servlet.PageNotFound]No mapping found for HTTP request with URI [/staff/upload/uploadpicture.do] in DispatcherServlet with name 'SpringMVC'
+  [INFO] [2017-08-01 23:40:08][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:30:41 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:40:08][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Tue Aug 01 23:30:40 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:40:13][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:40:13][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:40:13 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:40:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:40:14][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:40:14][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:40:14][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1069 ms
+  [INFO] [2017-08-01 23:40:14][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:40:14][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:40:14 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:40:14][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:40:14][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:40:15][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:40:15][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:40:15][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:40:15][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.do] onto handler 'upload'
+  [INFO] [2017-08-01 23:40:15][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 629 ms
+  [INFO] [2017-08-01 23:41:16][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:40:14 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:41:16][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Tue Aug 01 23:40:13 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:41:21][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:41:21][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:41:21 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:41:21][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:41:21][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:41:21][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 913 ms
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:41:22 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:41:22][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:41:22][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:41:22][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 556 ms
+  [INFO] [2017-08-01 23:42:49][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:41:22 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:42:49][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Tue Aug 01 23:41:21 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:42:53][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:42:53][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:42:53 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:42:53][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:42:54][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:42:54][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:42:54][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1102 ms
+  [INFO] [2017-08-01 23:42:54][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:42:54][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:42:54 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:42:54][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:42:54][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:42:55][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:42:55][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:42:55][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:42:55][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:42:55][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:42:55][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:42:55][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 730 ms
+  [WARN] [2017-08-01 23:42:55][org.springframework.web.servlet.PageNotFound]Request method 'GET' not supported
+  [INFO] [2017-08-01 23:43:56][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:42:54 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:43:56][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Tue Aug 01 23:42:53 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:44:01][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:44:01][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:44:01 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:44:01][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:44:01][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:44:01][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 838 ms
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:44:02 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:44:02][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:44:02][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:44:02][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 526 ms
+  [INFO] [2017-08-01 23:44:08][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:44:02 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:44:08][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Tue Aug 01 23:44:01 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:44:12][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:44:12][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:44:12 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:44:12][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:44:13][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:44:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:44:13][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 857 ms
+  [INFO] [2017-08-01 23:44:13][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:44:13][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:44:13 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:44:13][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:44:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:44:14][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:44:14][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:44:14][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:44:14][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:44:14][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:44:14][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:44:14][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 542 ms
+  [INFO] [2017-08-01 23:45:00][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:44:13 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:45:00][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Tue Aug 01 23:44:12 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:45:19][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:45:19][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:45:19 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:45:19][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:45:19][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:45:19][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 977 ms
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:45:20 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:45:20][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:45:20][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:45:20][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 639 ms
+  [INFO] [2017-08-01 23:48:03][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:45:20 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:48:03][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Tue Aug 01 23:45:19 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:48:07][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-01 23:48:07][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Tue Aug 01 23:48:07 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-01 23:48:07][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-01 23:48:08][org.springframework.beans.factory.config.PropertyPlaceholderConfigurer]Loading properties file from class path resource [jdbc.properties]
+  [INFO] [2017-08-01 23:48:08][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:48:12][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 5323 ms
+  [INFO] [2017-08-01 23:48:12][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-01 23:48:12][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Tue Aug 01 23:48:12 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-01 23:48:12][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-01 23:48:13][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-01 23:48:13][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-01 23:48:13][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-01 23:48:13][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-01 23:48:13][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture] onto handler 'upload'
+  [INFO] [2017-08-01 23:48:13][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture.*] onto handler 'upload'
+  [INFO] [2017-08-01 23:48:13][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/] onto handler 'upload'
+  [INFO] [2017-08-01 23:48:13][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 470 ms
   

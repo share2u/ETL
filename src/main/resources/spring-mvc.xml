@@ -35,7 +35,7 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean> 
-	<!-- 文件上传配置 -->
+	<!-- 文件上传配置  id名固定,由dispatcherServlet直接调用-->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
 		<!-- 默认编码 -->

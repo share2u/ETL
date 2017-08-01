@@ -18,8 +18,8 @@ public class StaffController {
 	
 	@RequestMapping(value="/{staffId}")
 	public String getStaff(@PathVariable("staffId") String staffId,Model model){
-		 Staff staff = staffService.selectByPrimaryKey(staffId);
-		 model.addAttribute("staff", staff);
+//		 Staff staff = staffService.selectByPrimaryKey(staffId);
+//		 model.addAttribute("staff", staff);
 		 return "hello";
 	}
 }
