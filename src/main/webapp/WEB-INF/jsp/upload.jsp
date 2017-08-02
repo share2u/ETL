@@ -8,7 +8,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
   <head>
     <base href="<%=basePath%>">    
-    <title>??</title>        
+    <title>upload</title>        
  <style type="text/css">
 #box{ width:1200px; height: 100px; margin:0 auto;border:1px solid #ddd; text-align: center;}
 </style>
@@ -18,10 +18,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <hr />
 <div id="box">
 <input type="text" id="testInput" placeholder="截屏后粘贴到输入框中" size="30" />
-<input type="button" id="picturePath" value="复制路径" onclick="copyUrl();"></div>
+<input type="button" id="picturePath" value="复制路径" onclick="copyUrl();"><br>
+<input type="text" id="CopyLink"  readonly="readonly" size="30" />
+
+</div>
 <img id ="img" src="">
 <div>
-<input type="text" id="CopyLink"  readonly="readonly" size="30" />
+
 <script type="text/javascript">
 
 (function(){
@@ -35,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             var img = new Image();
 
             img.src = e.target.result;
-           // document.getElementById("img").src=img.src;//显示上传的图片
+            document.getElementById("img").src=img.src;//显示上传的图片
           
                  /* $.ajax({
                     type: 'POST',
