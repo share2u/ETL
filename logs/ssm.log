@@ -1148,4 +1148,28 @@ Caused by: java.lang.ClassNotFoundException: com.fasterxml.jackson.core.util.Def
   [INFO] [2017-08-02 15:47:18][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/base64.*] onto handler 'uploadController'
   [INFO] [2017-08-02 15:47:18][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/base64/] onto handler 'uploadController'
   [INFO] [2017-08-02 15:47:19][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 544 ms
+  [INFO] [2017-08-02 16:04:29][org.springframework.web.context.support.XmlWebApplicationContext]Closing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Aug 02 15:47:18 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-02 16:04:29][org.springframework.web.context.support.XmlWebApplicationContext]Closing Root WebApplicationContext: startup date [Wed Aug 02 15:47:17 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-02 16:04:33][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization started
+  [INFO] [2017-08-02 16:04:33][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing Root WebApplicationContext: startup date [Wed Aug 02 16:04:33 CST 2017]; root of context hierarchy
+  [INFO] [2017-08-02 16:04:33][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mybatis.xml]
+  [INFO] [2017-08-02 16:04:34][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.context.ContextLoader]Root WebApplicationContext: initialization completed in 1520 ms
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization started
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.context.support.XmlWebApplicationContext]Refreshing WebApplicationContext for namespace 'SpringMVC-servlet': startup date [Wed Aug 02 16:04:35 CST 2017]; parent: Root WebApplicationContext
+  [INFO] [2017-08-02 16:04:35][org.springframework.beans.factory.xml.XmlBeanDefinitionReader]Loading XML bean definitions from class path resource [spring-mvc.xml]
+  [INFO] [2017-08-02 16:04:35][org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor]JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}] onto handler 'staffController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}.*] onto handler 'staffController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/staff/{staffId}/] onto handler 'staffController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/file] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/file.*] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/file/] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/upload] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/upload.*] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/upload/] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/base64] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/base64.*] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping]Mapped URL path [/upload/uploadpicture/base64/] onto handler 'uploadController'
+  [INFO] [2017-08-02 16:04:35][org.springframework.web.servlet.DispatcherServlet]FrameworkServlet 'SpringMVC': initialization completed in 513 ms
   
