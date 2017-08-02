@@ -159,6 +159,6 @@ public class UploadController {
 		return responseBO;
 	}
 public static void main(String[] args) throws IOException {
-	Process process = Runtime.getRuntime().exec("cmd.exe /c start F:/github/mypicture/auto.bat");
+	Process process = Runtime.getRuntime().exec("F:/github/mypicture/auto.bat");
 }
 }
