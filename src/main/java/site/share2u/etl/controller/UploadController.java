@@ -139,10 +139,10 @@ public class UploadController {
 		}
 		
 		try {
-			Process process = Runtime.getRuntime().exec("F:/github/mypicture/auto.bat");
+			Process process = Runtime.getRuntime().exec("cmd.exe /c start F:/github/mypicture/auto.bat");
 			process.waitFor();
 			responseBO.setCompleteCode(ResponseBO.SUCCESS);
-			responseBO.setReasonMessage(tempFileName);
+			responseBO.setReasonMessage("https://github.com/share2u/mypicture/blob/master/"+tempFileName);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
