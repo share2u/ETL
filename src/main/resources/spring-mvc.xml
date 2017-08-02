@@ -43,7 +43,7 @@
 		<!-- 上传文件大小限制为31M，31*1024*1024 -->
 		<property name="maxUploadSize" value="32505856" /> 
 		<!-- 内存中的最大值 -->
-		<property name="maxInMemorySize" value="4096" />
+		<property name="maxInMemorySize" value="1048576" />
 	</bean>
 	<!--mvc:resource 配置静态资源的访问  -->
 </beans>
