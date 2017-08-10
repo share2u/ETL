@@ -141,21 +141,21 @@
 		</dependency>
 		<!-- log end -->
 		<!-- 映入JSON -->
-		<dependency>  
-            <groupId>com.fasterxml.jackson.core</groupId>  
-            <artifactId>jackson-core</artifactId>  
-            <version>${jackson.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>com.fasterxml.jackson.core</groupId>  
-            <artifactId>jackson-databind</artifactId>  
-            <version>${jackson.version}</version>  
-        </dependency>  
-        <dependency>  
-            <groupId>com.fasterxml.jackson.core</groupId>  
-            <artifactId>jackson-annotations</artifactId>  
-            <version>${jackson.version}</version>  
-        </dependency> 
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-annotations</artifactId>
+			<version>${jackson.version}</version>
+		</dependency>
 		<!-- 上传组件包 -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -172,13 +172,18 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.9</version>
 		</dependency>
-
+		<!--echarts-java   -->
+		<dependency>
+			<groupId>com.github.abel533</groupId>
+			<artifactId>ECharts</artifactId>
+			<version>3.0.0</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.apache.maven.plugins</groupId>
 			<artifactId>maven-resources-plugin</artifactId>
 			<exclusions>
-			<!--解决slf4j冲突  -->
+				<!--解决slf4j冲突 -->
 				<exclusion>
 					<groupId>org.slf4j</groupId>
 					<artifactId>jcl-over-slf4j</artifactId>
@@ -186,45 +191,45 @@
 			</exclusions>
 			<version>2.7</version>
 		</dependency>
-		
+
 		<dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>2.19.1</version>
-        </dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>2.19.1</version>
+		</dependency>
 	</dependencies>
-	
-	
+
+
 	<build>
 		<plugins>
-			<plugin>  
-                <groupId>org.mortbay.jetty</groupId>  
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.16.v20140903</version>  
-                <configuration>
-                	<!--新代码扫描时间秒  -->
-                	<scanIntervalSeconds>5</scanIntervalSeconds>
-                	<!--虚拟目录  -->
-                    <webApp>  
-                        <contextPath>/</contextPath>  
-                    </webApp>  
-                    <connectors>  
-                        <connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">  
-                        	<!--端口号  -->
-                            <port>8000</port>  
-                        </connector>  
-                    </connectors>  
-                </configuration>  
-            </plugin>
-            <plugin>  
-				<groupId>org.apache.maven.plugins</groupId>  
-				<artifactId>maven-compiler-plugin</artifactId>  
-				<configuration>  
-					<source>1.8</source>  
-					<target>1.8</target>  
-				</configuration>  
+			<plugin>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>8.1.16.v20140903</version>
+				<configuration>
+					<!--新代码扫描时间秒 -->
+					<scanIntervalSeconds>5</scanIntervalSeconds>
+					<!--虚拟目录 -->
+					<webApp>
+						<contextPath>/</contextPath>
+					</webApp>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<!--端口号 -->
+							<port>8000</port>
+						</connector>
+					</connectors>
+				</configuration>
 			</plugin>
-              
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
 </project>

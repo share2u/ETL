@@ -23,7 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </div>
 <img id ="img" src="">
-<div>
 
 <script type="text/javascript">
 
