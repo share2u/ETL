@@ -15,10 +15,24 @@ public class DataTable {
 	
 	public static void main(String[] args) {
 		//1.行列都是维度，度量的选择，分类的选择
-		//2.1获取分类对应的行列的度量聚合数据  select 行分类，列，sum(money) from order group by 行分类，列
-		//2.2获取子分类对应的行列的度量聚合数据 （多种） select 行（子分类），列，sum(money) from order group by 行（子分类），列
+		//2.1获取分类对应的行列的度量聚合数据  select 维度，sum(money) from order group by 维度
 		//3.将数据映射到可视化透视表中
+			//行，列的数量可以得到，规划三维数组
+			//维度具体的维度项可以得到，规划透视表行
+			//度量的名称？（前台）
 		//4.可视化透视表映射为图表
+			//4.1根据前面选择的图表布局，在可视化模型中查找对应位置构建option
+		//5.传递到前台
+		
+		//普通柱状图的测试
+		/*id和交易金额
+		 * 行为id,也就是用户的数量，需要有筛选，太多
+		 * 交易金额为度量值，作为列
+		 * 
+		 * 
+		 * 
+		 * 
+		 * */
 		int[][][] data = new int[1][2][2];
 		data[0][0][0]=100;
 		data[0][0][1]=200;
