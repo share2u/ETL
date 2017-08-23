@@ -260,14 +260,14 @@ public class Kohonen_Topology {
 	 * @param max_epochs
 	 * @return
 	 */
-	double linyu(int i,int j,int epoch_count, int max_epochs){
+	private double linyu(int i,int j,int epoch_count, int max_epochs){
 		double dij=distanceij(i, j);
 		int c= (int) Math.sqrt(node_in_cluster_layer.length);
 		double kuandu=(c)*Math.pow(0.5/(c/2), epoch_count/max_epochs);
 		return Math.pow(Math.E, - Math.pow(dij, 2) / (2*(kuandu)));
 	}
 	
-	 double distanceij(int i,int j){
+	private double distanceij(int i,int j){
 		 int c= (int) Math.sqrt(node_in_cluster_layer.length);
 		int x1=i/c;
 		int y1=i%c;

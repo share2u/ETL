@@ -65,8 +65,10 @@ public class Kohonen_units {
 	
 	/**
 	 * 计算一个样本的所有输入向量（维度）和权值向量相似度
+	 * 欧式距离
 	 */
 	void calculate_sum_square_Euclidean_distance(){
+		//TODO: 距离公式
 	  double sumsquare;
 	  double ss1;
 	  int ci;

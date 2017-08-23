@@ -1,50 +1,279 @@
 package site.share2u.echarts;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
 
 import org.junit.Test;
 
 import com.github.abel533.echarts.axis.ValueAxis;
+import com.github.abel533.echarts.code.AxisType;
 import com.github.abel533.echarts.code.LineType;
+import com.github.abel533.echarts.data.Data;
 import com.github.abel533.echarts.json.GsonOption;
 import com.github.abel533.echarts.series.Scatter;
+import com.github.abel533.echarts.series.Series;
+
+import site.share2u.kmeans.Kmeans;
 
 public class TestEcharts {
-	
+
 	@Test
-	public void testScatter(){
-		//创建option
+	public void testScatter() {
+		// 创建option
 		GsonOption option = new GsonOption();
-		option.title("散点图测试");
-		
-		//横纵轴
-		ValueAxis valueAxis = new ValueAxis();
-		valueAxis.splitLine().lineStyle().type(LineType.dashed);
-		option.xAxis(valueAxis);
-		option.yAxis(valueAxis);
-		
-		//数据
-		Scatter scatter =new Scatter();
-		Object[] data1 ={3,4,15,43};
-		Object[] data2 ={4,2,20,91};
-		Object[] data3 ={10,9,30,18};
-		scatter.data(data1,data2,data3);
-		Scatter scatter1 =new Scatter();
-		Object[] data11 ={5,4,5,43};
-		Object[] data12 ={5,2,5,91};
-		Object[] data13 ={11,9,11,18};
-		scatter1.data(data11,data12,data13);
-		
-		//散点的大小
-		scatter1.symbolSize("function(data){return Math.sqrt(data[0])*10}");
-		Scatter scatter3 =new Scatter();
-		Object[] data31 ={2,4,15,43};
-		Object[] data32 ={3,2,20,91};
-		Object[] data33 ={8,9,30,18};
-		scatter3.data(data31,data32,data33);
-		option.series(scatter,scatter1,scatter3);
-		System.out.println(option.toString());
-		option.view();
+		// option.title("散点图测试");
+
+		// 横纵轴
+		ValueAxis valueAxisx = new ValueAxis();
+		valueAxisx.name("序号").splitLine().lineStyle().type(LineType.dashed);
+		// valueAxisx.type(AxisType.category);
+		// valueAxisx.data("Iris Setosa","Iris Versicolour","Iris Virginica");
+		option.xAxis(valueAxisx);
+		ValueAxis valueAxisy = new ValueAxis();
+		// 花萼长度,花萼宽度,花瓣长度,花瓣宽度
+		valueAxisy.name("花瓣宽度").splitLine().lineStyle().type(LineType.dashed);
+		option.yAxis(valueAxisy);
+
+		Map<String, String> irons = new HashMap<String, String>();
+		irons.put("Iris Setosa", "circle");
+		irons.put("Iris Versicolour", "roundRect");
+		irons.put("Iris Virginica", "triangle");
+		// 数据
+		Map<String, List<List<Object>>> irisData = getIrisData(3);
+		Set<String> keySet = irisData.keySet();
+		List<Series> series = new ArrayList<>();
+		List<Data> legendDatas = new ArrayList<>();
+		for (String key : keySet) {
+			Series scatter = new Scatter();
+			scatter.name(key);
+			Data legendData = new Data();
+			legendData.name(key).icon(irons.get(key));// 图例
+			legendDatas.add(legendData);
+			scatter.setData(irisData.get(key));
+			scatter.symbol(irons.get(key));// 数据标记图形
+			// scatter.symbolSize("function(data){return
+			// Math.sqrt(data[0])*10}");
+			series.add(scatter);
+		}
+		option.setSeries(series);
+		option.legend().setData(legendDatas);
+		option.legend().show();
+		System.out.println("option=" + option.toString() + ";");
 	}
+
+	public Map<String, List<List<Object>>> getIrisData(Integer i) {
+		Map<String, List<List<Object>>> map = new HashMap<String, List<List<Object>>>();
+
+		File file = new File("e:/iris.data");
+		try {
+			FileReader fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			String readLine = null;
+			Integer count = 0;
+			List<List<Object>> a1 = new ArrayList<>();
+			List<List<Object>> a2 = new ArrayList<>();
+			List<List<Object>> a3 = new ArrayList<>();
+			String[] splitStr;
+			while ((readLine = bufferedReader.readLine()) != null) {
+				splitStr = readLine.split(",");
+				switch (count / 50) {
+				case 0:
+					List<Object> arrayList1 = new ArrayList<Object>();
+					/*
+					 * for (String string : splitStr) {
+					 * arrayList1.add(Double.parseDouble(string)); }
+					 */
+					arrayList1.add(count);
+					arrayList1.add(Double.parseDouble(splitStr[i]));
+					a1.add(arrayList1);
+					break;
+				case 1:
+					List<Object> arrayList2 = new ArrayList<Object>();
+					/*
+					 * for (String string : splitStr) {
+					 * arrayList2.add(Double.parseDouble(string)); }
+					 */
+					arrayList2.add(count);
+					arrayList2.add(Double.parseDouble(splitStr[i]));
+					a2.add(arrayList2);
+					break;
+				case 2:
+					List<Object> arrayList3 = new ArrayList<Object>();
+					/*
+					 * for (String string : splitStr) {
+					 * arrayList3.add(Double.parseDouble(string)); }
+					 */
+					arrayList3.add(count);
+					arrayList3.add(Double.parseDouble(splitStr[i]));
+					a3.add(arrayList3);
+					break;
+				}
+				count++;
+			}
+			map.put("Iris Setosa", a1);
+			map.put("Iris Versicolour", a2);
+			map.put("Iris Virginica", a3);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return map;
+	}
+
+	/**
+	 * 获取欧式距离的下的聚类结果
+	 * 
+	 * @return
+	 */
+	public Map<String, List<List<Object>>> getESOM() {
+		Map<String, List<List<Object>>> map = new HashMap<String, List<List<Object>>>();
+
+		File file = new File("E:/eclipseWorkspace/ETL/test3.txt");
+		FileReader fileReader;
+		try {
+			fileReader = new FileReader(file);
+			BufferedReader bufferedReader = new BufferedReader(fileReader);
+			String readLine = null;
+			String[] split;
+			TreeMap<String, Integer> count = new TreeMap<>();
+			while ((readLine = bufferedReader.readLine()) != null) {
+				split = readLine.split(" ");
+				if (count.get(split[4]) == null) {
+					count.put(split[4], 1);
+				} else {
+					count.put(split[4], count.get(split[4]) + 1);
+				}
+				;
+			}
+
+			Set<String> keySet = count.keySet();
+			List<List<Object>> arrayList1 = new ArrayList<List<Object>>();
+			List<List<Object>> arrayList2 = new ArrayList<List<Object>>();
+			List<List<Object>> arrayList3 = new ArrayList<List<Object>>();
+			for (String key : keySet) {
+				String[] split2 = key.split("-");// a-x-y
+				List<Object> a = new ArrayList<Object>();
+				a.add(split2[1]);
+				a.add(split2[2]);
+				a.add(count.get(key));
+				switch (split2[0]) {
+				case "A":
+					arrayList1.add(a);
+					break;
+				case "B":
+					arrayList2.add(a);
+					break;
+				case "C":
+					arrayList3.add(a);
+					break;
+				}
+			}
+			map.put("Iris Setosa", arrayList1);
+			map.put("Iris Versicolour", arrayList2);
+			map.put("Iris Virginica", arrayList3);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return map;
+	}
+
+	/**
+	 * som 结合kmeans
+	 * @throws Exception
+	 */
+	@Test
+	public void testSomKmeans() throws Exception {
+		// 初始化一个Kmean对象，将k置为10
+		Kmeans k = new Kmeans(3);
+		ArrayList<float[]> dataSet = new ArrayList<float[]>();
+		BufferedReader bufferedReader = new BufferedReader(
+				new FileReader(new File("E:/eclipseWorkspace/ETL/test3.txt")));
+
+		String s = null;
+		String[] split;
+		ArrayList<String> arrayList = new ArrayList<String>();
+		while ((s = bufferedReader.readLine()) != null) {
+			split = s.split(" ");
+			arrayList.add(split[4]);
+		}
+		for (Iterator<String> iterator = arrayList.iterator(); iterator.hasNext();) {
+			String string = iterator.next();
+			String[] split2 = string.split("-");
+			float[] f = new float[2];
+			f[0] = Float.parseFloat(split2[1]);
+			f[1] = Float.parseFloat(split2[2]);
+			dataSet.add(f);
+		}
+
+		// 设置原始数据集
+		k.setDataSet(dataSet);
+		// 执行算法
+		k.execute();
+		// 得到聚类结果
+		ArrayList<ArrayList<float[]>> cluster = k.getCluster();
+		// 查看结果
+		for (int i = 0; i < cluster.size(); i++) {
+			k.printDataArray(cluster.get(i), "cluster[" + i + "]");
+		}
+	}
+
+	/**
+	 * 欧式距离下的聚类结果
+	 */
+	@Test
+	public void testE() {
+		// 创建option
+		GsonOption option = new GsonOption();
+
+		// 横纵轴
+		ValueAxis valueAxisx = new ValueAxis();
+		valueAxisx.name("x").splitLine().lineStyle().type(LineType.dashed);
+		// valueAxisx.type(AxisType.category);
+		// valueAxisx.data("Iris Setosa","Iris Versicolour","Iris Virginica");
+		option.xAxis(valueAxisx);
+		ValueAxis valueAxisy = new ValueAxis();
+		// 花萼长度,花萼宽度,花瓣长度,花瓣宽度
+		valueAxisy.name("y").splitLine().lineStyle().type(LineType.dashed);
+		option.yAxis(valueAxisy);
+
+		Map<String, String> irons = new HashMap<String, String>();
+		irons.put("Iris Setosa", "circle");
+		irons.put("Iris Versicolour", "roundRect");
+		irons.put("Iris Virginica", "triangle");
+		// 数据
+		Map<String, List<List<Object>>> irisData = getESOM();
+		Set<String> keySet = irisData.keySet();
+		List<Series> series = new ArrayList<>();
+		List<Data> legendDatas = new ArrayList<>();
+		for (String key : keySet) {
+			Series scatter = new Scatter();
+			scatter.name(key);
+			Data legendData = new Data();
+			legendData.name(key).icon(irons.get(key));// 图例
+			legendDatas.add(legendData);
+			scatter.setData(irisData.get(key));
+			scatter.symbol(irons.get(key));// 数据标记图形
+			scatter.symbolSize("function(data){return Math.sqrt(data[2])*10}");
+			scatter.label().emphasis().formatter("{a}").show(true);
+			series.add(scatter);
+		}
+		option.setSeries(series);
+		option.legend().setData(legendDatas);
+		option.legend().show();
+		System.out.println("option=" + option.toString() + ";");
+	}
+
 }

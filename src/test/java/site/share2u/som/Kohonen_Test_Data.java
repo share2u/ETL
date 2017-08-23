@@ -9,6 +9,6 @@ public class Kohonen_Test_Data extends Kohonen_Training_Data{
 	    filename = MyInput.readString(); 
 	    System.out.println();
 	    specify_signal_sample_size();
-	  //  normalize_data_in_array();
+	    normalize_data_in_array();
 	}
 }

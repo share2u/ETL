@@ -102,6 +102,8 @@ public class NeuralK {
 				}
 				Kohonen_Design.kluster_nodes_compete_for_activation();
 				Kohonen_Design.update_the_Kohonen_network2(ep, k_epochs);
+				//Kohonen_Design.update_the_Kohonen_network(ep, k_epochs);
+				//Kohonen_Design.update_the_Kohonen_network1();
 			}
 			// 修改学习率的部分
 			update_learning2(ep, k_epochs);

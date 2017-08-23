@@ -36,6 +36,7 @@ public class Kohonen_Training_Data {
 	  int i, j, imax, imin;
 	  int trigger;
 	  double min=0, max=0;
+	  double sum=0;
 	  max_output_value = new double[signal_dimensions];
 	  min_output_value = new double[signal_dimensions];
 
@@ -44,9 +45,11 @@ public class Kohonen_Training_Data {
 	    // identify minimum and maximum values for each dimension，找出每一个维度的最大和最小值，
 	    for(i = 0; i < sample_number; i++){
 	      if(i == 0){
+	    	sum=number_of_samples[i].data_in_sample[j];
 		    max = number_of_samples[i].data_in_sample[j];
 		    min = number_of_samples[i].data_in_sample[j];
 	      }else{
+	    	 sum +=number_of_samples[i].data_in_sample[j];
 		    if(number_of_samples[i].data_in_sample[j] < min){
 		    	min = number_of_samples[i].data_in_sample[j];
 		    }
@@ -60,7 +63,13 @@ public class Kohonen_Training_Data {
 	    // normalize the values in each dimension of the signal，归一化信号中的每一个维度
 	    max_output_value[j] = max;
 	    min_output_value[j] = min;
-
+	    double mean = sum/sample_number;//均值
+	    double s2=0;//方差
+	    for(i = 0; i < sample_number; i++){
+	    	s2 +=Math.pow((number_of_samples[i].data_in_sample[j])-mean,2.0)/sample_number;
+		 }
+	    double s=Math.sqrt(s2);//标准差
+	    /*
 	    imax = (int)(max);
 	    imin = (int)(min);
 
@@ -74,10 +83,15 @@ public class Kohonen_Training_Data {
 	    {trigger = 0;}
 
 	    if(trigger != 0)   //  do not normalize binary signals，不归一化二进制信号
-	    {
-	      for(i = 0; i < sample_number; i++)
-	      {number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j] - min)/(max - min);}
-	    }
+	    {*/
+	      for(i = 0; i < sample_number; i++){
+	    	  number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j] - min)/(max - min);
+	    	  //加权欧式距离
+	    	//  number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j]-mean)/s;
+	    	//  number_of_samples[i].data_in_sample[j] = number_of_samples[i].data_in_sample[j];
+	    	  
+	      }
+	  //  }
 	    System.out.println("");
 	  }
 	}
@@ -122,7 +136,8 @@ public class Kohonen_Training_Data {
 		 filename = "e:\\iris.data"; 
 	    System.out.println();
 	    specify_signal_sample_size();
-	    //normalize_data_in_array();
+	    //归一化数据集
+	   normalize_data_in_array();
 	}
 	
 	/**

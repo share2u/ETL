@@ -180,7 +180,7 @@
 		<dependency>
 			<groupId>com.github.abel533</groupId>
 			<artifactId>ECharts</artifactId>
-			<version>3.0.0</version>
+			<version>3.0.0.2</version>
 		</dependency>
 
 		<!--神经网络 -->
