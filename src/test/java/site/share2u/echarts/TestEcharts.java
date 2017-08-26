@@ -16,6 +16,7 @@ import java.util.TreeMap;
 
 import org.junit.Test;
 
+import com.alibaba.fastjson.JSON;
 import com.github.abel533.echarts.axis.ValueAxis;
 import com.github.abel533.echarts.code.AxisType;
 import com.github.abel533.echarts.code.LineType;
@@ -25,6 +26,8 @@ import com.github.abel533.echarts.series.Scatter;
 import com.github.abel533.echarts.series.Series;
 
 import site.share2u.kmeans.Kmeans;
+import site.share2u.kmeans.KmeansImpl;
+import site.share2u.kmeans.XYbean;
 
 public class TestEcharts {
 
@@ -140,7 +143,7 @@ public class TestEcharts {
 	public Map<String, List<List<Object>>> getESOM() {
 		Map<String, List<List<Object>>> map = new HashMap<String, List<List<Object>>>();
 
-		File file = new File("E:/eclipseWorkspace/ETL/test3.txt");
+		File file = new File("E:/eclipseWorkspace/ETL/test09.txt");
 		FileReader fileReader;
 		try {
 			fileReader = new FileReader(file);
@@ -200,7 +203,9 @@ public class TestEcharts {
 		Kmeans k = new Kmeans(3);
 		ArrayList<float[]> dataSet = new ArrayList<float[]>();
 		BufferedReader bufferedReader = new BufferedReader(
-				new FileReader(new File("E:/eclipseWorkspace/ETL/test3.txt")));
+//				new FileReader(new File("E:/eclipseWorkspace/ETL/somtest加权欧式.txt")));
+//		new FileReader(new File("E:/eclipseWorkspace/ETL/test09.txt")));
+		new FileReader(new File("E:/eclipseWorkspace/ETL/somtest未归一化.txt")));
 
 		String s = null;
 		String[] split;
@@ -224,10 +229,15 @@ public class TestEcharts {
 		k.execute();
 		// 得到聚类结果
 		ArrayList<ArrayList<float[]>> cluster = k.getCluster();
+		
 		// 查看结果
 		for (int i = 0; i < cluster.size(); i++) {
 			k.printDataArray(cluster.get(i), "cluster[" + i + "]");
 		}
+		ArrayList<float[]> center = k.getCenter();
+		System.out.println(JSON.toJSONString(center));
+		System.out.println(JSON.toJSONString(k.getClassInDistance()));
+		System.out.println(JSON.toJSONString(k.getClassOutDistance()));
 	}
 
 	/**
@@ -267,13 +277,44 @@ public class TestEcharts {
 			scatter.setData(irisData.get(key));
 			scatter.symbol(irons.get(key));// 数据标记图形
 			scatter.symbolSize("function(data){return Math.sqrt(data[2])*10}");
-			scatter.label().emphasis().formatter("{a}").show(true);
+			scatter.label().emphasis().formatter("{c}").show(true);
 			series.add(scatter);
 		}
 		option.setSeries(series);
 		option.legend().setData(legendDatas);
 		option.legend().show();
 		System.out.println("option=" + option.toString() + ";");
+	}
+	
+	@Test
+	public void testSomKmeans1() throws Exception {
+		int K = 3;  
+		KmeansImpl xyCluster = new KmeansImpl();  
+		BufferedReader bufferedReader = new BufferedReader(
+				new FileReader(new File("E:/eclipseWorkspace/ETL/test09.txt")));
+
+		String s = null;
+		String[] split;
+		ArrayList<String> arrayList = new ArrayList<String>();
+		while ((s = bufferedReader.readLine()) != null) {
+			split = s.split(" ");
+			arrayList.add(split[4]);
+		}
+		for (Iterator<String> iterator = arrayList.iterator(); iterator.hasNext();) {
+			String string = iterator.next();
+			String[] split2 = string.split("-");
+			float[] f = new float[2];
+			XYbean xYbean = new XYbean(Integer.parseInt(split2[1]), Integer.parseInt(split2[2]));
+			xyCluster.addRecord(xYbean);
+		}
+		
+		xyCluster.setK(K);
+		long a = System.currentTimeMillis();  
+	    List<List<XYbean>> cresult = xyCluster.clustering();  
+	    List<XYbean> center = xyCluster.getClusteringCenterT();  
+	    System.out.println(JSON.toJSONString(center));  
+	    long b = System.currentTimeMillis();  
+	    System.out.println("耗时：" + (b - a) + "ms");  
 	}
 
 }

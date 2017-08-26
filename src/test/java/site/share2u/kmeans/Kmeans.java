@@ -1,6 +1,7 @@
 package site.share2u.kmeans;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -15,6 +16,16 @@ public class Kmeans {
 	private ArrayList<ArrayList<float[]>> cluster; // 簇
 	private ArrayList<Float> jc;// 误差平方和，k越接近dataSetLength，误差越小
 	private Random random;
+
+	
+	
+	public ArrayList<float[]> getCenter() {
+		return center;
+	}
+
+	public void setCenter(ArrayList<float[]> center) {
+		this.center = center;
+	}
 
 	/**
 	 * 设置需分组的原始数据集
@@ -329,5 +340,25 @@ public class Kmeans {
 				+ "ms");
 		System.out.println("kmeans ends");
 		System.out.println();
+	}
+	
+	public Float getClassInDistance(){
+		List<Float> lis = new ArrayList<>();
+		for (int i = 0; i < cluster.size(); i++) {
+			float sum = 0;
+			ArrayList<float[]> al = cluster.get(i);
+			for (int j = 0; j < al.size(); j++) {
+				sum +=distance(center.get(i), al.get(i));
+			}
+			lis.add(sum/al.size());
+		}
+		float mean =0;
+		for (int i = 0; i < lis.size(); i++) {
+			mean +=lis.get(i);
+		}
+		return mean/lis.size();
+	}
+	public Float getClassOutDistance(){
+		return (distance(center.get(0), center.get(1))+distance(center.get(1), center.get(2)))/2;
 	}
 }

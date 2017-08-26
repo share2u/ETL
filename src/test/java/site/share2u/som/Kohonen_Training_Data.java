@@ -85,10 +85,27 @@ public class Kohonen_Training_Data {
 	    if(trigger != 0)   //  do not normalize binary signals，不归一化二进制信号
 	    {*/
 	      for(i = 0; i < sample_number; i++){
-	    	  number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j] - min)/(max - min);
+	    	 // number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j] - min)/(max - min);
 	    	  //加权欧式距离
 	    	//  number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j]-mean)/s;
-	    	//  number_of_samples[i].data_in_sample[j] = number_of_samples[i].data_in_sample[j];
+	    	  switch (j) {
+			case 0:
+				
+				number_of_samples[i].data_in_sample[j] = 0.113*number_of_samples[i].data_in_sample[j];
+				break;
+			case 1:
+				
+				number_of_samples[i].data_in_sample[j] = 0.0082*number_of_samples[i].data_in_sample[j];
+				break;
+			case 2:
+				
+				number_of_samples[i].data_in_sample[j] = 0.5224*number_of_samples[i].data_in_sample[j];
+				break;
+			case 3:
+				number_of_samples[i].data_in_sample[j] = 0.714*number_of_samples[i].data_in_sample[j];
+				
+				break;
+			}
 	    	  
 	      }
 	  //  }
