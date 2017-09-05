@@ -143,7 +143,7 @@ public class TestEcharts {
 	public Map<String, List<List<Object>>> getESOM() {
 		Map<String, List<List<Object>>> map = new HashMap<String, List<List<Object>>>();
 
-		File file = new File("E:/eclipseWorkspace/ETL/test09.txt");
+		File file = new File("E:/eclipseWorkspace/ETL/somtest变异系数.txt");
 		FileReader fileReader;
 		try {
 			fileReader = new FileReader(file);
@@ -201,29 +201,40 @@ public class TestEcharts {
 	public void testSomKmeans() throws Exception {
 		// 初始化一个Kmean对象，将k置为10
 		Kmeans k = new Kmeans(3);
-		ArrayList<float[]> dataSet = new ArrayList<float[]>();
+		ArrayList<Float[]> dataSet = new ArrayList<Float[]>();
 		BufferedReader bufferedReader = new BufferedReader(
 //				new FileReader(new File("E:/eclipseWorkspace/ETL/somtest加权欧式.txt")));
 //		new FileReader(new File("E:/eclipseWorkspace/ETL/test09.txt")));
-		new FileReader(new File("E:/eclipseWorkspace/ETL/somtest未归一化.txt")));
+//		new FileReader(new File("E:/eclipseWorkspace/ETL/somtest未归一化.txt")));
+//		new FileReader(new File("E:/eclipseWorkspace/ETL/somtest变异系数.txt")));
+		new FileReader(new File("E:/eclipseWorkspace/ETL/dacheng.txt")));
 
 		String s = null;
 		String[] split;
 		ArrayList<String> arrayList = new ArrayList<String>();
 		while ((s = bufferedReader.readLine()) != null) {
 			split = s.split(" ");
-			arrayList.add(split[4]);
+			
+			arrayList.add(split[11]);
 		}
+		StringBuilder s1=new StringBuilder();
+		StringBuilder s2=new StringBuilder();
 		for (Iterator<String> iterator = arrayList.iterator(); iterator.hasNext();) {
 			String string = iterator.next();
+			if(string.startsWith("A") || string.startsWith("B")||string.startsWith("C")){
+				string = string.substring(2);
+			}
 			String[] split2 = string.split("-");
-			float[] f = new float[2];
-			f[0] = Float.parseFloat(split2[1]);
-			f[1] = Float.parseFloat(split2[2]);
-			dataSet.add(f);
+			Float[] f = new Float[2];
+			f[0] = Float.parseFloat(split2[0]);
+			f[1] = Float.parseFloat(split2[1]);
+			s1.append(f[0]+",");
+			s2.append(f[1]+",");
+//			dataSet.add(f);
 		}
-
-		// 设置原始数据集
+		System.out.println(s1.toString());
+		System.out.println(s2.toString());
+		/*// 设置原始数据集
 		k.setDataSet(dataSet);
 		// 执行算法
 		k.execute();
@@ -237,7 +248,7 @@ public class TestEcharts {
 		ArrayList<float[]> center = k.getCenter();
 		System.out.println(JSON.toJSONString(center));
 		System.out.println(JSON.toJSONString(k.getClassInDistance()));
-		System.out.println(JSON.toJSONString(k.getClassOutDistance()));
+		System.out.println(JSON.toJSONString(k.getClassOutDistance()));*/
 	}
 
 	/**
@@ -315,6 +326,41 @@ public class TestEcharts {
 	    System.out.println(JSON.toJSONString(center));  
 	    long b = System.currentTimeMillis();  
 	    System.out.println("耗时：" + (b - a) + "ms");  
+	}
+	
+	@Test
+	public void testSomKmeans2() throws Exception {
+		int K = 3;  
+		KmeansImpl xyCluster = new KmeansImpl();  
+		BufferedReader bufferedReader = new BufferedReader(
+				new FileReader(new File("E:/eclipseWorkspace/ETL/dacheng.txt")));
+
+		String s = null;
+		String[] split;
+		ArrayList<String> arrayList = new ArrayList<String>();
+		while ((s = bufferedReader.readLine()) != null) {
+			split = s.split(" ");
+			arrayList.add(split[11]);
+		}
+		System.out.println(arrayList);
+		for (Iterator<String> iterator = arrayList.iterator(); iterator.hasNext();) {
+			String string = iterator.next();
+			if(string.startsWith("A") || string.startsWith("B")||string.startsWith("C")){
+				string = string.substring(2);
+			}
+			String[] split2 = string.split("-");
+			float[] f = new float[2];
+			XYbean xYbean = new XYbean(Integer.parseInt(split2[0]), Integer.parseInt(split2[1]));
+			xyCluster.addRecord(xYbean);
+		}
+		
+		xyCluster.setK(K);
+		long a = System.currentTimeMillis();  
+	    List<List<XYbean>> cresult = xyCluster.clustering();  
+	    List<XYbean> center = xyCluster.getClusteringCenterT();  
+	    System.out.println(JSON.toJSONString(center));  
+	    long b = System.currentTimeMillis();  
+	    System.out.println("耗时：" + (b - a) + "ms"); 
 	}
 
 }

@@ -39,7 +39,7 @@ public class Kohonen_Training_Data {
 	  double sum=0;
 	  max_output_value = new double[signal_dimensions];
 	  min_output_value = new double[signal_dimensions];
-
+	  double[]  weightw = new double[]{0,1.2,2.5,3.0,5.9,6.2,1.2,10.5,15.1,0.8,28.3,25.0};
 	  for(j = 0; j < signal_dimensions; j++){
 	    trigger = 1;
 	    // identify minimum and maximum values for each dimension，找出每一个维度的最大和最小值，
@@ -84,29 +84,12 @@ public class Kohonen_Training_Data {
 
 	    if(trigger != 0)   //  do not normalize binary signals，不归一化二进制信号
 	    {*/
+	    
 	      for(i = 0; i < sample_number; i++){
 	    	 // number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j] - min)/(max - min);
 	    	  //加权欧式距离
 	    	//  number_of_samples[i].data_in_sample[j] = (number_of_samples[i].data_in_sample[j]-mean)/s;
-	    	  switch (j) {
-			case 0:
-				
-				number_of_samples[i].data_in_sample[j] = 0.113*number_of_samples[i].data_in_sample[j];
-				break;
-			case 1:
-				
-				number_of_samples[i].data_in_sample[j] = 0.0082*number_of_samples[i].data_in_sample[j];
-				break;
-			case 2:
-				
-				number_of_samples[i].data_in_sample[j] = 0.5224*number_of_samples[i].data_in_sample[j];
-				break;
-			case 3:
-				number_of_samples[i].data_in_sample[j] = 0.714*number_of_samples[i].data_in_sample[j];
-				
-				break;
-			}
-	    	  
+			number_of_samples[i].data_in_sample[j] = weightw[j]*number_of_samples[i].data_in_sample[j];
 	      }
 	  //  }
 	    System.out.println("");
@@ -150,7 +133,7 @@ public class Kohonen_Training_Data {
 		System.out.println( "Enter the file name containing the training data for Kohonen network no. " +net_no);
 	   // filename = MyInput.readString(); 
 		//TODO: 训练集数据
-		 filename = "e:\\iris.data"; 
+		 filename = "e:\\dacheng.csv"; 
 	    System.out.println();
 	    specify_signal_sample_size();
 	    //归一化数据集

@@ -57,7 +57,7 @@ public class Kohonen_Topology {
 	       System.out.println("Please enter the dimensions of the network's input signal vector: ");       
 //	       dimensions_of_signal = MyInput.readInt(); 
 	       //TODO: 样本维度
-	       dimensions_of_signal = 4; 
+	       dimensions_of_signal = 11; 
 	       System.out.println();
 	     }
 	     
