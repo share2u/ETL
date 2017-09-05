@@ -30,11 +30,11 @@ public class Kmeans {
 	/**
 	 * 设置需分组的原始数据集
 	 * 
-	 * @param dataSet
+	 * @param dataSet2
 	 */
 
-	public void setDataSet(ArrayList<float[]> dataSet) {
-		this.dataSet = dataSet;
+	public void setDataSet(ArrayList<float[]> dataSet2) {
+		this.dataSet = dataSet2;
 	}
 
 	/**

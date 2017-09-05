@@ -200,14 +200,14 @@ public class TestEcharts {
 	@Test
 	public void testSomKmeans() throws Exception {
 		// 初始化一个Kmean对象，将k置为10
-		Kmeans k = new Kmeans(3);
-		ArrayList<Float[]> dataSet = new ArrayList<Float[]>();
+		Kmeans k = new Kmeans(2);
+		ArrayList<float[]> dataSet = new ArrayList<float[]>();
 		BufferedReader bufferedReader = new BufferedReader(
 //				new FileReader(new File("E:/eclipseWorkspace/ETL/somtest加权欧式.txt")));
 //		new FileReader(new File("E:/eclipseWorkspace/ETL/test09.txt")));
 //		new FileReader(new File("E:/eclipseWorkspace/ETL/somtest未归一化.txt")));
 //		new FileReader(new File("E:/eclipseWorkspace/ETL/somtest变异系数.txt")));
-		new FileReader(new File("E:/eclipseWorkspace/ETL/dacheng.txt")));
+		new FileReader(new File("E:/spring/ETL/dacheng.txt")));
 
 		String s = null;
 		String[] split;
@@ -219,22 +219,45 @@ public class TestEcharts {
 		}
 		StringBuilder s1=new StringBuilder();
 		StringBuilder s2=new StringBuilder();
+		Map<String,Integer> m =new HashMap<String,Integer>();
 		for (Iterator<String> iterator = arrayList.iterator(); iterator.hasNext();) {
 			String string = iterator.next();
 			if(string.startsWith("A") || string.startsWith("B")||string.startsWith("C")){
 				string = string.substring(2);
 			}
+			if(m.keySet().contains(string)){
+				m.put(string, m.get(string)+1);
+			}else{
+				m.put(string, 1);
+			}
 			String[] split2 = string.split("-");
-			Float[] f = new Float[2];
+			float[] f = new float[2];
 			f[0] = Float.parseFloat(split2[0]);
 			f[1] = Float.parseFloat(split2[1]);
 			s1.append(f[0]+",");
 			s2.append(f[1]+",");
-//			dataSet.add(f);
+			dataSet.add(f);
 		}
-		System.out.println(s1.toString());
-		System.out.println(s2.toString());
-		/*// 设置原始数据集
+//		System.out.println(m);
+//		System.out.println(s1.toString());
+//		System.out.println(s2.toString());
+		
+		/*
+		 * 
+	var data = [
+    [[3,0,33,'Australia',1990],[7,9,59,'Australia',1990],[9,9,425,'Australia',1990],
+    [2,9,44,'Australia',1990],[5,2,16,'Australia',1990],[3,9,59,'Australia',1990],
+    [6,9,89,'Australia',1990],[2,1,6,'Australia',1990],[0,2,31,'Australia',1990],
+    [1,4,46,'Australia',1990],[0,4,1,'Australia',1990],[4,9,57,'Australia',1990],
+    [1,9,18,'Australia',1990],[0,0,20,'Australia',1990],[8,9,48,'Australia',1990],
+    [0,9,60,'Australia',1990],[0,8,3,'Australia',1990],[5,9,99,'Australia',1990],
+    [9,0,32,'Australia',1990],[7,1,29,'Australia',1990]
+    ]
+];
+
+		 */
+		
+		// 设置原始数据集
 		k.setDataSet(dataSet);
 		// 执行算法
 		k.execute();
@@ -247,8 +270,6 @@ public class TestEcharts {
 		}
 		ArrayList<float[]> center = k.getCenter();
 		System.out.println(JSON.toJSONString(center));
-		System.out.println(JSON.toJSONString(k.getClassInDistance()));
-		System.out.println(JSON.toJSONString(k.getClassOutDistance()));*/
 	}
 
 	/**
