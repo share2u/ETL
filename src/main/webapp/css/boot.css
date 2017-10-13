@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+body {
+	padding-top: 50px;
+}
+.col-md-2{	
+	padding-left: 8px;
+	padding-right: 8px;
+}
+#weidus ol li{
+	float: left;
+}
+#duliangs ol li{
+	float: left;
+}
+
