@@ -5,25 +5,34 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.github.abel533.echarts.Option;
+import com.github.abel533.echarts.Legend;
+import com.github.abel533.echarts.Title;
+import com.github.abel533.echarts.axis.Axis;
+import com.github.abel533.echarts.axis.ValueAxis;
+import com.github.abel533.echarts.code.AxisType;
+import com.github.abel533.echarts.code.LineType;
 import com.github.abel533.echarts.data.Data;
+import com.github.abel533.echarts.json.GsonOption;
 import com.github.abel533.echarts.series.Line;
-import com.github.abel533.echarts.series.Scatter;
+import com.github.abel533.echarts.series.Series;
+
+import edu.emory.mathcs.backport.java.util.Arrays;
+import site.share2u.etl.util.CEcharts;
 
 public class ScatterTest {
 	@Test
-	public void test1() throws InstantiationException, IllegalAccessException{
+	public void test1() throws InstantiationException, IllegalAccessException {
 		CEcharts cEcharts = new CEcharts();
-		String title="title 标题";
-		String xAxis="x轴";
-		String yAxis="y轴";
+		String title = "title 标题";
+		String xAxis = "x轴";
+		String yAxis = "y轴";
 		List<Data> legendData = new ArrayList<>();
 		legendData.add(new Data("A"));
 		legendData.add(new Data("B"));
 		legendData.add(new Data("聚类中心"));
-		
+
 		List<List<List<Object>>> series = new ArrayList<>();
-		List<List<Object>> serieA= new ArrayList<>();
+		List<List<Object>> serieA = new ArrayList<>();
 		List<Object> aA1 = new ArrayList<>();
 		aA1.add(3);
 		aA1.add(0);
@@ -78,11 +87,10 @@ public class ScatterTest {
 		aA9.add(29);
 		aA9.add("A");
 		serieA.add(aA9);
-		
+
 		series.add(serieA);
-		
-		
-		List<List<Object>> serieB= new ArrayList<>();
+
+		List<List<Object>> serieB = new ArrayList<>();
 		List<Object> aB1 = new ArrayList<>();
 		aB1.add(7);
 		aB1.add(9);
@@ -155,11 +163,11 @@ public class ScatterTest {
 		aB12.add(99);
 		aB12.add("B");
 		serieB.add(aB12);
-		
+
 		series.add(serieB);
-		
-		List<List<Object>> serie3= new ArrayList<>();
-		//[[7.6229916,8.644005],[1.9754099,5.3825135]]
+
+		List<List<Object>> serie3 = new ArrayList<>();
+		// [[7.6229916,8.644005],[1.9754099,5.3825135]]
 		List<Object> a31 = new ArrayList<>();
 		a31.add(6.4);
 		a31.add(8.9);
@@ -173,22 +181,50 @@ public class ScatterTest {
 		a32.add("聚类中心");
 		serie3.add(a32);
 		series.add(serie3);
-		Option option = cEcharts.setScatterOption(Scatter.class,title, legendData, xAxis, yAxis, series);
-		System.out.println(option.toString());
-		}
-}
+//		Option option = cEcharts.setScatterOption(Scatter.class, null, title, legendData, xAxis, yAxis, series);
+	//	System.out.println(option.toString());
+	}
 
-/*var data = [
- * [[3,0,33,'Australia',1990],[7,9,59,'Australia',1990],[9,9,425,'
- * Australia',1990],
- * [2,9,44,'Australia',1990],[5,2,16,'Australia',1990],[3,9,59,'
- * Australia',1990],
- * [6,9,89,'Australia',1990],[2,1,6,'Australia',1990],[0,2,31,'Australia
- * ',1990],
- * [1,4,46,'Australia',1990],[0,4,1,'Australia',1990],[4,9,57,'Australia
- * ',1990],
- * [1,9,18,'Australia',1990],[0,0,20,'Australia',1990],[8,9,48,'
- * Australia',1990],
- * [0,9,60,'Australia',1990],[0,8,3,'Australia',1990],[5,9,99,'Australia
- * ',1990], [9,0,32,'Australia',1990],[7,1,29,'Australia',1990] ] ];
- */	
+@Test
+public void test2() throws InstantiationException, IllegalAccessException{
+	CEcharts cEcharts = new CEcharts();
+	Title title = new Title();
+	title.setText("科目与学生");
+	Legend legend = new Legend();
+	List<Data> legendData = new ArrayList<>();
+	legendData.add(new Data("张三"));
+	legendData.add(new Data("李四"));
+	legend.setData(legendData);
+	
+	List<Axis> xAxis = new ArrayList<>();
+	List<Axis> yAxis = new ArrayList<>();
+	ValueAxis xAxisx = new ValueAxis();
+	ValueAxis yAxisy = new ValueAxis();
+	xAxisx.name("科目").splitLine().lineStyle().type(LineType.dashed);
+	yAxisy.name("分数").splitLine().lineStyle().type(LineType.dashed);
+	xAxisx.setType(AxisType.category);//类目轴必须设置data
+	xAxisx.setData(Arrays.asList(new String[]{"语文","数学","英语"}));
+	xAxis.add(xAxisx);
+	yAxis.add(yAxisy);
+	
+	List<Series> series = new ArrayList<>();
+	Series scatter = new Line();
+	scatter.setName("张三");
+	List<List<Object>> serieData = new ArrayList<>();
+	serieData.add(Arrays.asList(new Object[]{"语文",12}));
+	serieData.add(Arrays.asList(new Object[]{"数学",6}));
+	serieData.add(Arrays.asList(new Object[]{"英语",5}));
+	scatter.setData(serieData );
+	series.add(scatter);
+	Series scatter1 = new Line();
+	scatter1.setName("李四");
+	List<List<Object>> serieData1 = new ArrayList<>();
+	serieData1.add(Arrays.asList(new Object[]{"语文",4}));
+	serieData1.add(Arrays.asList(new Object[]{"数学",3}));
+	serieData1.add(Arrays.asList(new Object[]{"英语",2}));
+	scatter1.setData(serieData1 );
+	series.add(scatter1);
+	GsonOption option = cEcharts.setScatterOption(title, legend, xAxis, yAxis,series );
+	System.out.println(option.toString());
+}
+}

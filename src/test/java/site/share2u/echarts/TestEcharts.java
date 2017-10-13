@@ -1,10 +1,7 @@
 package site.share2u.echarts;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.log;
-
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,12 +14,7 @@ import java.util.TreeMap;
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
-import com.github.abel533.echarts.Legend;
-import com.github.abel533.echarts.Option;
-import com.github.abel533.echarts.Title;
-import com.github.abel533.echarts.axis.Axis;
 import com.github.abel533.echarts.axis.ValueAxis;
-import com.github.abel533.echarts.code.AxisType;
 import com.github.abel533.echarts.code.LineType;
 import com.github.abel533.echarts.data.Data;
 import com.github.abel533.echarts.json.GsonOption;
